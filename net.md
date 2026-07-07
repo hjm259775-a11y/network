@@ -408,7 +408,7 @@ HTTP——超文本传输协议
 
 SSL/TLS——安全传输协议（从明文传递到密文传递，以及认证）
 
-HTTPS——
+HTTPS——HTTP+SSL/TLS
 
 
 
