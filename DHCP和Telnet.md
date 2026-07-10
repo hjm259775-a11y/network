@@ -20,7 +20,7 @@ c/s架构（客户端/服务器，客户端受益）
 ```
 [xgz]aaa
 
-[xgz-aaa]local-user xgz privilege level 15 password cipher 123456//用户名叫xgz，访问权限为15（0-15），密码是123456
+[xgz-aaa]local-user xgz privilege level 15 password cipher 123456//用户名叫xgz，访问权限为15（0-15），密码是123456，cipher可以让密码在本地存储中变成密文，防止别人偷看
 Info: Add a new user.
 
 [xgz-aaa]local-user xgz service-type telnet//创建一个名为xgz的本地用户并启用Telnet服务
@@ -39,6 +39,8 @@ Info: Add a new user.
 ```
 
 
+
+当然，这里如果你是在eNSP里面模拟，用的是路由器代替PC的话，就得给连接被控端的网口配个IP地址
 
 ```
 <h>telnet 192.168.1.1
@@ -172,11 +174,7 @@ Info: It's successful to create an IP address pool.
 真正干活的是网关，所以要把全局配置给到0/0/0这个接口
 ```
 
-```
-```
-
-```
-```
+可以同时将多个IP池配到同一个网关，会根据网关的IP地址自动分配，不用担心混乱
 
 
 

@@ -291,6 +291,7 @@ ARP---地址解析协议---通过一种地址获取另外一种地址
 广播地址---48位二进制全1的MAC地址---全F
 
 广播---逼交换机泛洪
+
 广播域--泛洪范围
 
 ![image-20260705211920700](C:\Users\xgz24\AppData\Roaming\Typora\typora-user-images\image-20260705211920700.png)
