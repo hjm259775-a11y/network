@@ -103,7 +103,7 @@ c/s架构
 
 2.再次获取IP地址
 
-​	1.客户端->服务器（以为可能不止一个DHCP服务器给你发Offer，所以你还得回应），广播（得告诉所有服务器我选了哪个，剩下的我没	选）————DHCP-request
+​	1.客户端->服务器（电脑是有记忆的，会想沿用上次的IP）（以为可能不止一个DHCP服务器给你发Offer，所以你还得回应），广播（得告诉所有服务器我选了哪个，剩下的我没选）————DHCP-request
 
 ​	
 
@@ -123,6 +123,82 @@ T1时间---50%---12小时
 T2时间---87.5%---21小时
 	1，客户端---服务器---广播--DHCP-request
 	2，服务器---客户端---单播/广播---DHCP-ACK
+
+
+
+
+
+------------------
+
+配置DHCP服务器（一般在路由器上）
+
+
+
+```
+[xgz]dhcp enable 
+
+开启DHCP服务
+```
+
+
+
+
+
+```
+[xgz]ip pool myn
+创建一个名叫myn的IP池
+
+
+Info: It's successful to create an IP address pool.
+[xgz-ip-pool-myn]
+```
+
+
+
+```
+[xgz-ip-pool-myn]network 192.168.1.0 mask 24
+将192.168.1.0的网段倒到池子里，配置地址池
+
+[xgz-ip-pool-myn]gateway-list 192.168.1.1
+配置网关
+
+[xgz-ip-pool-myn]dns-list 114.114.114.114
+配置DNS（114是没问题的）
+```
+
+```
+[xgz]interface GigabitEthernet 0/0/0
+[xgz-GigabitEthernet0/0/0]dhcp select global 
+真正干活的是网关，所以要把全局配置给到0/0/0这个接口
+```
+
+```
+```
+
+```
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
