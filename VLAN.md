@@ -113,7 +113,7 @@ VID---VLAN ID----12位二进制构成---1-4094
 
 但是，PC1无法和PC3之间通信，因为在不同广播域，这时候我们需要交换机
 
-### VLAN间路由
+### 第五步：VLAN间路由
 
 其实就是添个路由器，两个广播域，一个广播域对应一条线
 
@@ -126,3 +126,53 @@ VID---VLAN ID----12位二进制构成---1-4094
 就实现了VLAN技术，广播域的个数不再被交换机个数所限制
 
 ！？强强？！
+
+------------------
+
+那么我想更节省成本，路由器上一个物理接口对应一个广播域还是太贵了，有没有什么更好的方法
+
+有的兄弟有的
+
+
+
+可以用子接口（为什么叫子接口的，其实是原本一个真实的物理接口下衍生出来的虚拟接口）
+
+```
+[xgz]interface GigabitEthernet 0/0/0.1
+
+开通一个在0/0/0下的子接口
+```
+
+```
+[xgz-GigabitEthernet0/0/0.1]ip address 192.168.1.254 24
+设置子接口网关
+
+[xgz-GigabitEthernet0/0/0.1]dot1q termination vid 2
+让子接口管理VLAN2的流量
+
+[xgz-GigabitEthernet0/0/0.1]arp broadcast enable 
+开启ARP广播应答（因为子接口默认无法应答）
+```
+
+![image-20260713235022855](C:\Users\xgz24\AppData\Roaming\Typora\typora-user-images\image-20260713235022855.png)
+
+
+
+那么现在就完全实现单臂路由了
+
+------------
+
+小知识：如何修改本接口的类型（access，trunk）
+
+```
+当时是无法直接修改的，得恢复默认，那么怎么恢复默认呢，默认VLAN是1呀
+所以直接
+port default vlan 1
+就可以了
+```
+
+------------
+
+![image-20260714000955185](C:\Users\xgz24\AppData\Roaming\Typora\typora-user-images\image-20260714000955185.png)
+
+OK，写作业吧
