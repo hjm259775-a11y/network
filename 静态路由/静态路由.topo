@@ -89,13 +89,13 @@
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
             </slot>
         </dev>
-        <dev id="79E34036-640E-415b-97C0-16BDD8F4AB31" name="AR10" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-5E-5B-ED" com_port="2011" bootmode="0" cx="814.000000" cy="400.000000" edit_left="841" edit_top="454">
+        <dev id="3FF59D44-2A81-4882-A06C-D306FB9C248C" name="AR9" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-6B-23-84" com_port="2010" bootmode="0" cx="586.000000" cy="402.000000" edit_left="613" edit_top="456">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="GE" count="1" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
             </slot>
         </dev>
-        <dev id="3FF59D44-2A81-4882-A06C-D306FB9C248C" name="AR9" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-6B-23-84" com_port="2010" bootmode="0" cx="586.000000" cy="402.000000" edit_left="613" edit_top="456">
+        <dev id="79E34036-640E-415b-97C0-16BDD8F4AB31" name="AR10" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-5E-5B-ED" com_port="2011" bootmode="0" cx="814.000000" cy="400.000000" edit_left="841" edit_top="454">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="GE" count="1" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />

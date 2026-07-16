@@ -37,17 +37,17 @@
                 <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
             </slot>
         </dev>
-        <dev id="B02C9E36-CBA7-4890-8C6D-048304F9AF4C" name="DNS" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-98-6D-76 -ipaddr 192.168.1.20 -ipmask 255.255.255.0 -gateway 192.168.1.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 192.168.1.20 -ipv6dns 3000::1 -dnslist _www.xgz.com_192.168.1.10" system_mac="54-89-98-98-6D-76" com_port="0" bootmode="0" cx="36.000000" cy="41.000000" edit_left="63" edit_top="95">
+        <dev id="90EF1D1C-6293-4393-B4A9-016B29A65EED" name="Server1" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-97-7A-10 -ipaddr 192.168.1.10 -ipmask 255.255.255.0 -gateway 192.168.1.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 192.168.1.20 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-C6-21-A0" com_port="0" bootmode="0" cx="207.000000" cy="253.000000" edit_left="234" edit_top="307">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
             </slot>
         </dev>
-        <dev id="90EF1D1C-6293-4393-B4A9-016B29A65EED" name="Server1" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-97-7A-10 -ipaddr 192.168.1.10 -ipmask 255.255.255.0 -gateway 192.168.1.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 192.168.1.20 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-97-7A-10" com_port="0" bootmode="0" cx="207.000000" cy="253.000000" edit_left="234" edit_top="307">
+        <dev id="F2EA20DD-79B8-4e03-B920-34B6A17A31A3" name="Client1" poe="0" model="Client" settings="-domain 0 -eth 54-89-98-DA-12-94 -ipaddr 192.168.2.10 -ipmask 255.255.255.0 -gateway 192.168.2.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 192.168.1.20 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-89-58-8E" com_port="0" bootmode="0" cx="852.000000" cy="274.000000" edit_left="879" edit_top="328">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
             </slot>
         </dev>
-        <dev id="F2EA20DD-79B8-4e03-B920-34B6A17A31A3" name="Client1" poe="0" model="Client" settings="-domain 0 -eth 54-89-98-DA-12-94 -ipaddr 192.168.2.10 -ipmask 255.255.255.0 -gateway 192.168.2.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 192.168.1.20 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-DA-12-94" com_port="0" bootmode="0" cx="852.000000" cy="274.000000" edit_left="879" edit_top="328">
+        <dev id="B02C9E36-CBA7-4890-8C6D-048304F9AF4C" name="DNS" poe="0" model="Server" settings="-domain 0 -eth 54-89-98-98-6D-76 -ipaddr 192.168.1.20 -ipmask 255.255.255.0 -gateway 192.168.1.1 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 192.168.1.20 -ipv6dns 3000::1 -dnslist _www.xgz.com_192.168.1.10" system_mac="54-89-98-FB-36-62" com_port="0" bootmode="0" cx="36.000000" cy="41.000000" edit_left="63" edit_top="95">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
             </slot>
@@ -83,5 +83,8 @@
         </line>
     </lines>
     <shapes />
-    <txttips />
+    <txttips>
+        <txttip left="325" top="115" right="435" bottom="132" content="192.168.1.0/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="713" top="113" right="823" bottom="130" content="192.168.2.0/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
 </topo>

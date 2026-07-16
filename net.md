@@ -254,10 +254,10 @@ VRP--通用路由平台
 
 ```
 [xgz-GigabitEthernet0/0/0]qu
-[xgz]qu
+[xgz]quit
 <xgz>
 
-qu可以回退
+quit可以回退
 ```
 
 
