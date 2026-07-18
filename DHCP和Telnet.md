@@ -80,16 +80,16 @@ c/s架构
 
 
 
-1.首次获取IP地址
+一，首次获取IP地址
 	1.客户端->服务器---广播包---DHCP-DiscoVer
 
 ​	应用层：DHCP-Discover
 
-​	传输层：UDP---SPORT:68 DPORT：67
+​	传输层：UDP---SPORT:68                DPORT：67
 
-​	网络层：IP--SIP：0.0.0.0 DIP:255.255.255.255
+​	网络层：IP--SIP：0.0.0.0（代表没有地址） DIP:255.255.255.255
 
-​	数据链路层：以太网---SMAC：自己 DMAC：全F
+​	数据链路层：以太网---SMAC：自己         DMAC：全F
 
 ​	
 
@@ -97,15 +97,15 @@ c/s架构
 
 ​	
 
-​	3.客户端->服务器（以为可能不止一个DHCP服务器给你发Offer，所以你还得回应），广播（得告诉所有服务器我选了哪个，剩下的我没	选）————DHCP-request
+​	3.客户端->服务器（因为可能不止一个DHCP服务器给你发Offer，所以你还得回应），广播（得告诉所有服务器我选了哪个，剩下的我没选）————DHCP-request
 
 ​	
 
 ​	4.服务器---客户端---DHCP-ACK
 
-2.再次获取IP地址
+二，再次获取IP地址
 
-​	1.客户端->服务器（电脑是有记忆的，会想沿用上次的IP）（以为可能不止一个DHCP服务器给你发Offer，所以你还得回应），广播（得告诉所有服务器我选了哪个，剩下的我没选）————DHCP-request
+​	1.客户端->服务器（电脑是有记忆的，会想沿用上次的IP），广播（得告诉所有服务器我选了哪个，剩下的我没选）————DHCP-request
 
 ​	
 
@@ -117,12 +117,12 @@ c/s架构
 
 ------------------------------
 
-租期---1天
+IP租期---1天
 
-T1时间---50%---12小时
+T1续租时间---50%---12小时
 	1，客户端---服务器---单播---DHCP-request
 	2，服务器---客户端---单播/广播---DHCP-ACK
-T2时间---87.5%---21小时
+T2续租时间---87.5%---21小时
 	1，客户端---服务器---广播--DHCP-request
 	2，服务器---客户端---单播/广播---DHCP-ACK
 
@@ -148,14 +148,15 @@ T2时间---87.5%---21小时
 
 ```
 [xgz]ip pool myn
-创建一个名叫myn的IP池
-
-
 Info: It's successful to create an IP address pool.
 [xgz-ip-pool-myn]
+
+创建一个名叫myn的IP池
 ```
 
 
+
+注意，接口仍然需要配网关
 
 ```
 [xgz-ip-pool-myn]network 192.168.1.0 mask 24
@@ -165,18 +166,29 @@ Info: It's successful to create an IP address pool.
 配置网关
 
 [xgz-ip-pool-myn]dns-list 114.114.114.114
-配置DNS（114是没问题的）
+配置DNS（用114就不用配了，可以正常使用，8.8.8.8也可以）
 ```
 
 ```
 [xgz]interface GigabitEthernet 0/0/0
 [xgz-GigabitEthernet0/0/0]dhcp select global 
 真正干活的是网关，所以要把全局配置给到0/0/0这个接口
+意思是在该接口处执行下发
 ```
 
 可以同时将多个IP池配到同一个网关，会根据网关的IP地址自动分配，不用担心混乱
 
 
+
+
+
+
+
+```
+[R1]display ip pool
+
+查看ip地址池
+```
 
 
 
