@@ -202,9 +202,11 @@ Info: It's successful to create an IP address pool.
 
 
 
+台windows主机初次启动，如果无法从DHCP服务器处获取IP地址，那么此主机可能会使用什么IP地址?
 
 
 
+**169.254.x.x/16**
 
 
 

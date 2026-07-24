@@ -183,6 +183,8 @@ Acl's step is 5
 
 ### 需求三：PC10不能telnetR1，只能ping通R1
 
+​	高级ACL的位置原则：因为高级ACL可以实现精确的匹配，所以，越靠近源越好，这样可以节省链路资源
+
 
 
 ![image-20260719013220111](C:\Users\xgz24\AppData\Roaming\Typora\typora-user-images\image-20260719013220111.png)
