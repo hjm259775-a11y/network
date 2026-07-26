@@ -220,7 +220,7 @@ RIP的防环机制
 
 
 ```
-[r1]rip1 ---进程号仅具有本地意义
+[r1]rip 1 ---进程号仅具有本地意义
 [r1-rip-1]
 
 1，启动RIP进程
@@ -264,9 +264,15 @@ RIP的防环机制
 
 1.RIPV2的手工认证
 
-[R1-GigabitEthernet0/0/0jrip authentication-mode simple cipher 123456
+[R1-GigabitEthernet0/0/0] rip authentication-mode simple cipher 123456
 
-simple明文方式，plain本地存储不加密（两边可以不统一）但是MD5和SImple必须两边统
+simple明文方式，plain本地存储不加密（两边可以不统一）但是MD5和SImple必须两边统一
+
+
+
+```
+[R7-GigabitEthernet0/0/0] rip authentication-mode md5 nonstandard plain 123456 1
+```
 
 
 

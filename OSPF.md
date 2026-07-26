@@ -345,7 +345,7 @@ OSPF的选举是非抢占模式的- 选举时间等于死亡时间 （后续加�
 1，OSPF的手工认证（其实就是加密）
 
 ```
-[r1-GigabitEthernet0/0/01ospf authentication-mode md5 1 cipher 123456
+[r1-GigabitEthernet0/0/0.1]ospf authentication-mode md5 1 cipher 123456
 
 对面也得改哟
 ```

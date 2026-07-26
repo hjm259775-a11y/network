@@ -228,12 +228,10 @@ NAT——网络地址转换——实现公网地址和私网地址之间的转�
 ​	192.168.1.10//80<=>12.0.0.1//80
 
 ```
-[r2-GigabitEthernet0/0/2]nat server protocol tcp global 12.0.0.1 80 inside 192.
-168.1.10 80
+[r2-GigabitEthernet0/0/2]nat server protocol tcp global 12.0.0.1 80 inside 192.168.1.10 80
 
 
-[r2-GigabitEthernet0/0/2]nat server protocol tcp global current-interface 80 ins
-ide 192.168.1.10 80
+[r2-GigabitEthernet0/0/2]nat server protocol tcp global current-interface 80 inside 192.168.1.10 80
 
 
 二者都可，current-interface指的是本端口，有些时候直接写本端口不允许
@@ -260,8 +258,7 @@ ide 192.168.1.10 80
 外面访问时会这么访问：http://12.0.0.1:8080
 
 ```
-[r2-GigabitEthernet0/0/2]nat server protocol tcp global current-interface 8080 ins
-ide 192.168.1.20 80
+[r2-GigabitEthernet0/0/2]nat server protocol tcp global current-interface 8080 inside 192.168.1.20 80
 ```
 
 
