@@ -150,7 +150,7 @@ VID---VLAN ID----12位二进制构成---1-4094
 设置子接口网关
 
 [xgz-GigabitEthernet0/0/0.1]dot1q termination vid 2
-让子接口管理VLAN2的流量
+让路由器学习802.1Q的标签，并且让子接口管理VLAN2的流量
 
 [xgz-GigabitEthernet0/0/0.1]arp broadcast enable 
 开启ARP广播应答（因为子接口默认无法应答）
